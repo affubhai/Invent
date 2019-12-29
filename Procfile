@@ -1,1 +1,1 @@
-web: gunicorn django_ipPrac.wsgi
+web: gunicorn django_ipPrace.wsgi
