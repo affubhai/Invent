@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap" rel="stylesheet">
+  <style type="text/css" id="dcoder_stylesheet">
+    body {
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      Background-color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    #Master {
+      display: flex;
+      Margin-top: 100px;
+      justify-content: center;
+      Flex-direction: row;
+      Flex-wrap: wrap;
+      Z-index: 1;
+    }
+
+    .Header {
+      position: absolute;
+      top: 20px;
+      padding: 20px;
+      font-size: 25px;
+      color: #F4511E;
+      border-radius: 10px;
+      width: 93vw;
+      Z-index: 10;
+    }
+
+    .AppTitle {
+      font-family: 'Lobster', cursive;
+      Margin-right: 20px;
+    }
+
+    .company_name {
+      Margin-left: 20px;
+    }
+
+    .HeaderInfo {
+      Position: absolute;
+      Right: 20px;
+    }
+
+    .NavBar {
+      position: fixed;
+      display: flex;
+      Align-items: center;
+      Justify-content: center;
+      Top: 30px;
+      Right: 30px;
+      Flex-direction: row;
+      Padding: 0px;
+      Border-radius: 50px;
+      Background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      Z-index: 11;
+
+    }
+
+    .NavBarItem {
+      Display: flex;
+      Align-items: center;
+      Justify-content: center;
+      Padding: 15px 30px;
+      Border-radius: 50px;
+      background-position: center;
+      transition: background 0.1s;
+    }
+
+    .NavBarMenu:hover {
+      background: #FF8A65 radial-gradient(circle, transparent 1%, #FF8A65 1%) center/15000%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .NavBarMenu:active {
+      background-color: #FFB300;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .NavBarLog:hover {
+      background: #FF8A65 radial-gradient(circle, transparent 1%, #FF8A65 1%) center/15000%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .NavBarLog:active {
+      background-color: #FFB300;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .NavBarInventory {
+      Color: white;
+      Background-color: #F4511E;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .EntryCard {
+      Position: relative;
+      Display: flex;
+      Flex-direction: column;
+      Padding: 40px;
+      Margin: 10px;
+      Align-items: center;
+      Justify-content: center;
+      height: 320px;
+      Width: 180px;
+      Background-color: white;
+      Border-radius: 15px;
+      Z-index: 5;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .CardAction {
+      Position: absolute;
+      Display: flex;
+      Width: 90%;
+      Align-items: center;
+      Justify-content: center;
+      Bottom: 40px;
+      Color: white;
+      Z-index: 3;
+    }
+
+
+
+    .AddAndSubtractSection {
+      Position: absolute;
+      Display: flex;
+      Flex-direction: row;
+      Right: 0px;
+    }
+
+    .AddSection,
+    .SubtractSection,
+    .DeleteSection {
+      display: flex;
+      Align-items: center;
+      Justify-content: center;
+      padding: 10px 10px;
+      Color: white;
+      Background-color: #F4511E;
+      border: none;
+      margin: 0 4px;
+      Border-radius: 50px;
+      Z-index: 9;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      background-position: center;
+      transition: background 0.8s;
+    }
+
+    .DeleteOverSection {
+      Position: absolute;
+      Display: flex;
+      Flex-direction: row;
+      Left: 0px;
+    }
+    
+    .DeleteSection {background-color: black}
+
+    .AddSection:hover,
+    . SubtractSection:hover,
+    .DeleteSection:hover {
+      background: #FF8A65 radial-gradient(circle, transparent 1%, #FF8A65 1%) center/15000%;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .AddSection:active,
+    .SubtractSection:active,
+    .DeleteSection:active {
+      background-color: #FFB300;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    label {
+      display: flex;
+      Justify-content: center;
+      Align-items: center;
+      Margib-right: 20px;
+    }
+
+    input[type=text] {
+      display: flex;
+      background-color: white;
+      padding: 5px 10px;
+      margin: 5px 5px;
+      border: solid 1px;
+      border-color: #BDBDBD;
+      border-radius: 500px;
+      Width: 70%;
+    }
+
+
+    input[type=text]:focus {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      border-color: white;
+    }
+
+    .SubmitButton:hover {
+      background: #FF8A65 radial-gradient(circle, transparent 1%, #FF8A65 1%) center/15000%;
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    }
+
+    .SubmitButton:active {
+      background-color: #FFB300;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    }
+
+    .FormRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0px;
+      justify-content: center;
+    }
+
+    .SubmitButton {
+      Position: absolute;
+      Bottom: 20px;
+      display: flex;
+      Align-items: center;
+      Justify-content: center;
+      padding: 15px 30px;
+      margin-top: 10px;
+      Color: white;
+      Background-color: #F4511E;
+      border: none;
+      Border-radius: 50px;
+      Z-index: 9;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      background-position: center;
+      transition: background 0.8s;
+    }
+
+    .SubmitButton:hover {
+      background: #FF8A65 radial-gradient(circle, transparent 1%, #FF8A65 1%) center/15000%;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .SubmitButton:active {
+      background-color: #FFB300;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .ItemName {
+      Font-weight: bold;
+      Font-size: 30px;
+    }
+
+    .ItemQuantity {
+      display: flex;
+      background-color: white;
+      padding: 5px 10px;
+      margin: 5px 5px;
+      border: solid 1px;
+      border-color: #BDBDBD;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Header">
+    <span class="AppTitle">Invent</span>|
+    <span class="company_name">{{user.first_name}}</span>
+  </div>
+
+  <div class="NavBar">
+    <a href="{% url 'invent-menu' %}">
+      <div class="NavBarMenu NavBarItem">
+        <i class="material-icons">more_horiz</i> Menu
+      </div>
+    </a>
+    <div class="NavBarInventory NavBarItem">
+      <i class="material-icons">view_module</i> Inventory
+    </div>
+    <a href="{% url 'invent-log' %}">
+      <div class="NavBarLog NavBarItem">
+        <i class="material-icons">view_stream</i> Logs
+      </div>
+    </a>
+  </div>
+
+  <div id="Master">
+
+    <form action="add_item_form_submission" method="POST">
+      <div class="EntryCard">
+        <div class="ItemName">ADD ITEM</div>
+
+        {% csrf_token %}
+        <div class="FormRow">
+          <label for="name"><i class="material-icons">assignment</i></label>
+          <input type="text" name="name" placeholder="Name" required />
+        </div>
+
+        <div class="FormRow">
+          <label for="code"><i class="material-icons">assignment</i></label>
+          <input type="text" name="code" placeholder="Item Code" required />
+        </div>
+
+        <div class="FormRow">
+          <label for="price"><i class="material-icons">show_chart</i></label>
+          <input type="text" name="price" placeholder="Price" required />
+        </div>
+
+        <div class="FormRow">
+          <label for="quantity"><i class="material-icons">border_all</i></label>
+          <input type="text" name="quantity" placeholder="Quantity" />
+        </div>
+        <input type="submit" class="SubmitButton">
+      </div>
+    </form>
+    {% for item in items %}
+    <div class="EntryCard">
+
+      <div class="ItemName">{{item.name}}</div>
+      <div class="ItemPrice">&#8377; {{item.price}}</div>
+      <div class="ItemQuantity">{{item.quantity}}</div>
+      <div class="ItemCode">{{item.item_code}}</div>
+      <div class="CardAction">
+       <div class="DeleteOverSection">
+        <a href="/delete/{{item.id}}">
+        <div class="DeleteSection">
+          <i class="material-icons">delete_forever</i>
+          </div>
+          </a>
+        </div>
+        <div class="AddAndSubtractSection">
+          <a href="/add/{{item.id}}">
+            <div class="AddSection">
+              <i class="material-icons">add</i>
+            </div>
+          </a>
+          <a href="/subtract/{{item.id}}">
+            <div class="SubtractSection">
+              <i class="material-icons">remove</i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</body>
+
+</html>
