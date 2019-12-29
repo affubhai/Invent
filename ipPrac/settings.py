@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ipPrace.urls'
+ROOT_URLCONF = 'ipPrac.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ipPrace.wsgi.application'
+WSGI_APPLICATION = 'ipPrac.wsgi.application'
 
 
 # Database
