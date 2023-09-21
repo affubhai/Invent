@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .models import item,legger
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt   
 from bs4 import BeautifulSoup
 import requests
 import html.parser
@@ -42,7 +43,7 @@ def inventory(request):
     return render(request,'inventory.html', context)
 
 
-
+@csrf_exempt
 def add_item_form_submission(request):
 
     name = request.POST.get('name')
